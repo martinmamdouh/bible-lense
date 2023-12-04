@@ -26,7 +26,8 @@
 
     <v-card-actions class="card-action">
       <v-btn color="#b78727 " text @click="goTo(category.childrenPath)">
-        Explore
+        {{ $store.state.locale == "ar" ? "اقرأ المزيد" : "read more" }}
+        <v-icon small class="mx-2">mdi-book-open-variant</v-icon>
       </v-btn>
       <v-spacer></v-spacer>
       <v-btn color="#b78727 " icon> <v-icon>mdi-share-variant</v-icon> </v-btn>

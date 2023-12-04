@@ -14,7 +14,9 @@ Vue.prototype.$stopLoading = function () {
 Vue.prototype.$showSnackbar = function (type, message) {
   store.dispatch("showSnackbar", { type: type, message: message });
 };
-
+Vue.prototype.$setLocale = function (local = "en") {
+  store.commit("setLocale", local);
+};
 Vue.prototype.$hideSnackbar = function () {
   store.commit("hideSnackbar");
 };

@@ -1,5 +1,9 @@
 <template>
-  <v-app id="app" class="app">
+  <v-app
+    id="app"
+    class="app"
+    :dir="$store.state.locale == 'ar' ? 'rtl' : 'ltr'"
+  >
     <v-container fluid>
       <dt-loading />
       <dt-snackbar />

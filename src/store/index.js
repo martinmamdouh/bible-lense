@@ -12,6 +12,7 @@ export default new Vuex.Store({
     connectionStatus: false,
     connectedAddress: null,
     csrfToken: null,
+    locale: "en",
   },
   mutations: {
     startLoading(state, message) {
@@ -61,6 +62,9 @@ export default new Vuex.Store({
     },
     setCsrfToken(state, csrfToken) {
       state.csrfToken = csrfToken;
+    },
+    setLocale(state, locale) {
+      state.locale = locale;
     },
   },
   actions: {

@@ -1,32 +1,51 @@
 <template>
   <v-container>
-    <v-row
-      class="intro-text"
-      :class="{ 'full-text': readmore, 'summary-text': !readmore }"
-      dense
-    >
-      <v-col cols="12">
-        <h1 class="navy">Introduction</h1>
-      </v-col>
+    <v-row class="intro-text" dense>
       <v-col cols="10">
-        <p>
-          Embark on a journey of spiritual enlightenment and delve into the
-          depths of the Holy Scriptures with our comprehensive guide to reading
-          and understanding the Bible. Whether you're a seasoned follower of
-          faith or a curious newcomer, This guide will equip you with the tools
-          and insights necessary to navigate the expansive landscape of biblical
-          knowledge, ensuring a meaningful and enriching experience.
+        <h3>
+          &ldquo;{{
+            $store.state.locale == "ar"
+              ? `سِرَاجٌ لِرِجْلِي كَلاَمُكَ وَنُورٌ لِسَبِيلِي." (مز 119: 105).`
+              : `Your word is a lamp for my feet, a light on my path. (Psalm 119:105)`
+          }}&rdquo;
+        </h3>
+        <p :class="{ 'full-text': readmore, 'summary-text': !readmore }">
+          {{
+            $store.state.locale == "ar"
+              ? `
+مرحباً بكم في دليل قراءة الكتاب المقدس! نحن هنا لنجعل قراءة الكتاب المقدس أكثر سهولة. لكل سفر، نقدم ملخصًا ونشارك رؤى حول الكاتب والجمهور المستهدف والغرض من الكتابة. سواء كنت قارئًا متمرسًا أو مبتدئًا، هدفنا هو مساعدتك في فهم سياق ومعنى كل كتاب، مما يجعل تجربة قراءتك للكتاب المقدس أكثر فائدة وممتعة. ابدأ في استكشاف ثراء الكتاب المقدس مع ملخصاتنا المعلوماتية الخلفية المفيدة.`
+              : `Welcome to our Bible Reading Guide! We're here to make reading the
+          Bible more accessible. For each Scripture, we provide a summary and
+          share insights about the writer, the intended audience, and the
+          purpose behind the writing. Whether you're a seasoned reader or just
+          starting, our goal is to help you understand the context and meaning
+          of each book, making your Bible reading experience more insightful and
+          enjoyable. Start exploring the richness of the Scriptures with our
+          handy summaries and background information.`
+          }}
         </p>
-        <p>
-          To embark on your biblical exploration, we encourage you to begin with
-          selecting either 'The Old Testament' or 'The New Testament' card to
-          access the individual books. Before diving into the text, take a
-          moment to read the introduction and summary of each book to gain a
-          contextual understanding about the author, the purpose, the audience,
-          and the surrounding context of the text.
+        <p :class="{ 'full-text': readmore, 'summary-text': !readmore }">
+          {{
+            $store.state.locale == "ar"
+              ? `للبدء في استكشاف الكتاب المقدس، نشجعك على البدء 
+           بأختيار بطاقة "العهد القديم" أو "العهد الجديد"
+           القسم أدناه للوصول إلى الأسفار. قبل البدء في قراءة
+           النص، خذ دقيقة من وقتك لقراءة مقدمة وملخص
+           السفر للحصول على فهم سياقي حول الكاتب، والغرض،
+           المتلقي للرساله والسياق و الاحداث المحيطين بالنص.`
+              : `To embark on your biblical exploration, we encourage you to begin with
+          selecting either 'The Old Testament' or 'The New Testament' card form
+          the below section to access the individual books. Before diving into
+          the text, take a moment to read the introduction and summary of each
+          book to gain a contextual understanding about the author, the purpose,
+          the audience, and the surrounding context of the text.`
+          }}
         </p>
       </v-col>
-      <v-col cols="2">
+      <v-col
+        cols="2"
+        :class="{ 'full-text': readmore, 'summary-text': !readmore }"
+      >
         <v-img
           height="180"
           width="180"
@@ -36,7 +55,7 @@
       </v-col>
     </v-row>
     <v-row align="center" justify="center">
-      <v-btn small color="blue" text @click="readmore = !readmore"
+      <v-btn small color="#b78727" text @click="readmore = !readmore"
         >{{ readmore ? "Read Less" : "Read More" }}
         <v-icon small>{{
           readmore ? "mdi-arrow-up" : "mdi-arrow-down"
@@ -60,29 +79,27 @@
 </template>
 <script>
 import CategoryCard from "@/components/home/CategoryCard";
-import CATEGORIES from "@/assets/database/categories.json";
+import { DATA } from "@/assets/database/categories";
 
 export default {
   components: { CategoryCard },
   data() {
-    return { categories: null, readmore: false };
+    return { categories: [], readmore: true };
   },
   created() {
-    this.categories = CATEGORIES["en"];
+    this.categories = DATA[this.$store.state.locale];
   },
 };
 </script>
 <style>
 .full-text {
-  height: 280px;
-  overflow: hidden;
+  display: inherit;
 }
 .intro-text {
   text-align: start;
   font-size: 16px;
 }
 .summary-text {
-  height: 150px;
-  overflow: hidden;
+  display: none;
 }
 </style>

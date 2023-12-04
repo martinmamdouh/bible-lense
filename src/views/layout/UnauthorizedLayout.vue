@@ -16,7 +16,20 @@
       >
 
       <v-spacer></v-spacer>
-
+      <v-btn
+        text
+        x-small
+        :color="languages[0].value == locale ? '#000080' : '#333'"
+        @click="onSelectLanguage(languages[0].value)"
+        >{{ languages[0].label }} </v-btn
+      ><v-icon small>mdi mdi-web</v-icon>
+      <v-btn
+        x-small
+        text
+        :color="languages[1].value == locale ? '#000080' : '#333'"
+        @click="onSelectLanguage(languages[1].value)"
+        >{{ languages[1].label }}
+      </v-btn>
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
@@ -75,19 +88,9 @@
             v-for="(category, n) in categories"
             :key="n"
             class="pl-8"
+            @click="goToPath(category.childrenPath)"
           >
-            <v-list-item-title
-              @click="
-                $router.push({
-                  name: 'canvasPage',
-                  params: {
-                    canvasType: category.childrenUrlPathParams.canvasType,
-                    dataSet: category.childrenUrlPathParams.dataSet,
-                  },
-                })
-              "
-              >{{ category.title }}</v-list-item-title
-            >
+            <v-list-item-title>{{ category.title }}</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -101,19 +104,46 @@
   </v-app>
 </template>
 <script>
-import CATEGORIES from "@/assets/database/categories.json";
+import { DATA } from "@/assets/database/categories";
 export default {
   data() {
-    return { drawer: false, categories: [] };
+    return {
+      drawer: false,
+      categories: [],
+      locale: "en",
+      languages: [
+        { id: 1, label: "English", value: "en" },
+        { id: 2, label: "العربية", value: "ar" },
+      ],
+    };
   },
   methods: {
     goTo(name) {
       if (this.$route.name == name) return;
-      this.$router.push({ name });
+      try {
+        this.$router.push({ name });
+      } catch (err) {
+        return;
+      }
+    },
+    goToPath(path) {
+      try {
+        this.$router.push(path);
+      } catch (err) {
+        return;
+      }
+    },
+    onSelectLanguage(language) {
+      this.locale = language;
+      window.localStorage.setItem("bible_lense_locale", this.locale);
+      window.location.reload();
     },
   },
   created() {
-    this.categories = CATEGORIES["en"];
+    const lang = window.localStorage.getItem("bible_lense_locale") || "en";
+    this.locale = lang;
+    this.$setLocale(lang);
+    this.categories = DATA[this.$store.state.locale];
   },
 };
 </script>

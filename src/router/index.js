@@ -12,38 +12,33 @@ const routes = [
         path: "",
         name: "homePage",
         component: () => import("@/views/home/HomePage.vue"),
-
       },
       {
         path: "about",
         name: "aboutPage",
         component: () => import("@/views/about/AboutPage.vue"),
-
       },
       {
         path: "dictionary",
         name: "dictionaryPage",
         component: () => import("@/views/dictionary/DictionaryPage.vue"),
-
       },
       {
-        path: "canvas/:canvasType/:dataSet",
+        path: "canvas/:canvasType/:dataSet/:category",
         name: "canvasPage",
         component: () => import("@/views/canvases/CanvasPage.vue"),
-        props: true
+        props: true,
       },
       {
         path: "404",
         name: "notFound",
         component: () => import("@/views/errors/NotFound.vue"),
       },
-
-    ]
+    ],
   },
 
   { path: "*", redirect: { name: "notFound" } },
 ];
-
 
 const router = new VueRouter({
   routes,

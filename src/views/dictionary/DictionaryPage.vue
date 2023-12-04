@@ -29,7 +29,7 @@
           :items-per-page="-1"
           :fixed-header="true"
           height="400"
-          class="elevation-6 pa-4 pr-4"
+          class="elevation-1 pa-4 pr-4 mt-12"
         >
           <template v-slot:top>
             <h3>
@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import { loadJsonData } from "@/utilities/DataLoader";
+import { loadJsData } from "@/utilities/DataLoader";
 import Speak from "speak-tts"; // es6
 export default {
   data() {
@@ -119,8 +119,8 @@ export default {
       });
     },
     loadDictionaryData(lang) {
-      this.dictionary = loadJsonData("dictionary")[lang];
-      this.filteredDictionary = loadJsonData("dictionary")[lang];
+      this.dictionary = loadJsData("dictionary")[lang];
+      this.filteredDictionary = loadJsData("dictionary")[lang];
       this.initializeCategories();
     },
     initializeCategories() {

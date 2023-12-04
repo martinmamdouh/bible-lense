@@ -8,11 +8,11 @@
     >
       <v-card height="100%" flat class="fixed-nav px-2">
         <v-card-title v-if="!fullscreen" primary-title class="capitalize navy">
-          {{ currentCategory }}
+          {{ category }}
         </v-card-title>
         <v-card-text v-if="!fullscreen" class="scroll">
           <v-list flat>
-            <v-list-item-group :value="activeListItem" mandatory class="navy">
+            <v-list-item-group :value="activeListItem" mandatory class="maroon">
               <v-list-item
                 v-for="(item, i) in items"
                 :key="i"
@@ -51,7 +51,7 @@
           }"
         >
           <div class="my-n4">
-            <v-breadcrumbs :items="breadcrumbs" />
+            <v-breadcrumbs :items="breadcrumbs" color="red" />
           </div>
           <v-row dense class="pb-2" align="center">
             <v-col sm="10" cols="12">
@@ -99,54 +99,52 @@
             width="auto"
             class="mb-4 main-img"
           ></v-img>
-          <div
-            v-for="(key, z) in Object.keys(selectedItem.properties)"
-            :key="z"
-          >
-            <label class="navy capitalize">{{ key }}:</label>
-            {{ selectedItem.properties[key] }}
-          </div>
-          <v-divider class="my-2" />
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Bible Text</h3>
-          <div>{{ selectedItem.bibleText }}</div>
-          <h3 class="maroon">References</h3>
-          <div v-for="(reference, w) in selectedItem.references" :key="w">
-            {{ reference }}
-          </div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
-          <h3 class="maroon">Interpretation</h3>
-          <div>{{ selectedItem.interpretation }}</div>
+          <section v-if="Object.keys(selectedItem.properties).length > 0">
+            <div
+              v-for="(key, z) in Object.keys(selectedItem.properties)"
+              :key="z"
+            >
+              <label class="navy capitalize">{{ key }}:</label>
+              {{ selectedItem.properties[key] }}
+            </div>
+            <v-divider class="my-2" />
+          </section>
+          <section v-if="selectedItem.isMarkDown">
+            <div
+              v-html="parseMarkDown(selectedItem.markDown)"
+              class="markdown"
+            ></div>
+          </section>
+          <section v-else>
+            <h3 class="maroon"></h3>
+            <div>{{ selectedItem.interpretation }}</div>
+          </section>
+          <section v-if="selectedItem.bibleVerses" class="mt-4">
+            <h3 class="maroon mb-4">
+              {{
+                $store.state.locale == "ar"
+                  ? "آيات ذات صلة من الكتاب المقدس"
+                  : "Related Verses from The Bible"
+              }}
+            </h3>
+            <v-card
+              v-for="(verse, v) in selectedItem.bibleVerses"
+              :key="v"
+              class="elevation-6 mb-4 verse-card"
+            >
+              <v-card-text> &ldquo;{{ verse }}&rdquo; </v-card-text>
+            </v-card>
+          </section>
+          <section v-if="selectedItem.references.length">
+            <h3 class="maroon mb-4">
+              {{ $store.state.locale == "ar" ? "مصادر" : "References" }}
+            </h3>
+            <ul>
+              <li v-for="(reference, w) in selectedItem.references" :key="w">
+                {{ reference }}
+              </li>
+            </ul>
+          </section>
         </v-card-text>
       </v-card>
     </v-col>
@@ -157,8 +155,12 @@
   </v-row>
 </template>
 <script>
+import { marked } from "marked";
 export default {
-  props: { items: { type: Array, required: true } },
+  props: {
+    items: { type: Array, required: true },
+    category: { type: String, required: true },
+  },
   data() {
     return {
       selectedItem: {},
@@ -180,9 +182,8 @@ export default {
     this.selectedItem = itemId ? this.items[itemId - 1] : this.items[0];
     this.activeListItem = itemId - 1;
     this.url = this.$route.path;
-    this.currentCategory = this.$route.path.split("/")[3];
     this.breadcrumbs.push({
-      text: this.currentCategory,
+      text: this.category,
       disabled: true,
       href: "",
     });
@@ -191,10 +192,13 @@ export default {
     onSelectItem() {
       this.$router.push({ query: { itemId: this.selectedItem.id } });
     },
+    parseMarkDown(content) {
+      return marked.parse(content);
+    },
   },
 };
 </script>
-<style scoped>
+<style>
 .scroll {
   overflow-y: scroll;
   height: 600px;
@@ -264,6 +268,25 @@ h3 {
 }
 .bold {
   font-weight: bold;
+}
+.markdown h1 {
+  color: #800000;
+  margin-bottom: 10px;
+}
+.markdown h2 {
+  color: #800000;
+  margin-bottom: 10px;
+}
+.markdown h3 {
+  color: #800000;
+  margin-bottom: 10px;
+}
+header {
+  color: #800000;
+  margin-bottom: 10px;
+}
+.verse-card {
+  border-left: 4px solid #800000 !important;
 }
 @media (max-width: 576px) {
   .main-img {
