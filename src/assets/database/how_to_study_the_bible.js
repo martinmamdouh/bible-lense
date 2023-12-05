@@ -9,17 +9,41 @@ exports.DATA = {
       isMarkDown: true,
       markDown: `
 # How to read the bible?
-Reading the Bible is not just a task, <mark>it's a life journey that never truly ends.</mark> Each time we open its pages, we dive deeper into the profound messages of God, connecting chapters and events that shape the very fabric of our spiritual understanding.  
-As you take this perpetual journey, let these steps be your guide, helping you gain the bible knowledge and drawing you closer to the timeless wisdom it holds.
-### Steps to Effective Bible Reading
-1. **Pray:** Begin your Bible reading with a moment of prayer. Seek guidance, understanding, and an open heart as you embark on this spiritual journey.
-2. **Set the Target - Understand God's Heart:** Make understanding God your ultimate goal. Delve into the text to comprehend His thoughts, vision, and desires. Explore how to live in harmony with Him, glorify Him, and find true satisfaction in His presence.
-3. **Context Matters:** Before diving into verses, read the introduction and summary of the chosen book. Understanding the historical and cultural context enhances comprehension.
-Navigate to home page, select the old testament or new testament, select the book you are planning to read, and read our summary about the writer, audience and the historical context.
-4. **Put Yourself in Their Shoes:** Imagine yourself in the place of the characters. Consider how you would feel and act in their situations. This empathy can deepen your connection to the narrative.
-5. **Take Notes:** Note down thoughts, questions, or personal reflections. This not only reinforces your understanding but creates a record of your spiritual journey.
-6. **Explore Supplementary Resources:** Check out related videos, podcasts, or articles. These can offer additional perspectives and enhance your overall comprehension.     
-7. **Prayerful Reflection:** End your reading sessions with a moment of reflection or prayer. This can foster a deeper connection with the spiritual aspects of the text.  
+Reading the Bible is not just a task, <mark>it is a lifelong journey that never truly ends.</mark>. Reading the Bible is a rewarding experience that can transform your life. By following these guidelines, you can make the most of your time in the Word of God.
+## Guidelines for Reading the Bible
+
+* **Start with prayer and ask God for wisdom and understanding.**
+* **Read about the historical background of the book you are reading, such as the author, purpose, and intended audience.**
+* **Read regularly.**
+* **Read in order from beginning to end.**
+* **Read with understanding and focus on quality, not quantity.**
+* **Read with the purpose of getting to know God and His will for your life.**
+* **Learn from the lives of Jesus and the saints, and extract practical applications that you can apply to your own life.**
+* **Give titles to the texts, and write them in your Bible.**
+* **Make your Bible a friend to you, and make it a source of learning, guidance, peace, and truth.**
+* **Connect the text you are reading with the rest of the Bible.**
+* **Read the Bible more than once, as you will discover new meanings each time you read it.**
+* **Choose the right time and place to read.**
+
+### Explanation of some points
+
+* **Reading about the historical background of the book:** This helps you understand the context in which the text was written, and interpret it better.
+* **Regular reading:** This helps you continue to learn and grow spiritually.
+* **Reading in order:** This helps you understand the overall story of the Bible.
+* **Reading with understanding:** This means looking for interpretations of the text if you have any difficulty understanding it.
+* **Reading with the purpose of getting to know God and His will for your life:** This helps you apply what you learn from the Bible to your daily life.
+* **Learning from the lives of Jesus and the saints:** This helps you become a better Christian.
+* **Giving titles to the texts:** This helps you remember what you are reading.
+* **Making your Bible a friend to you:** This means making it a source of inspiration and guidance.
+* **Connecting the text you are reading with the rest of the Bible:** This helps you understand the big picture of the Bible.
+* **Reading the Bible more than once:** This will help you understand it better each time you read it.
+
+Here are some additional tips for reading the Bible:
+
+* **Find a translation that you understand and that you enjoy reading.** There are many different translations of the Bible available, so take some time to find one that works for you.
+* **Use a Bible study guide or commentary to help you understand the text.** There are many resources available to help you understand the Bible, so don't be afraid to use them.
+* **Talk to other people about what you are learning from the Bible.** Talking to others about your faith can help you grow and learn.
+
 
 *Remember, reading the Bible is a personal journey, and there's no one-size-fits-all approach. Tailor these steps to suit your preferences and let the process unfold naturally.*
 
@@ -32,7 +56,10 @@ Navigate to home page, select the old testament or new testament, select the boo
         "Keep this Book of the Law always on your lips; meditate on it day and night, so that you may be careful to do everything written in it. Then you will be prosperous and successful. (Joshua 1:8)",
         "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness, so that the servant of God may be thoroughly equipped for every good work. (2 Timothy 3:16-17)",
       ],
-      references: [],
+      references: [
+        "https://www.youtube.com/watch?v=C3qL54EnW20",
+        "https://www.youtube.com/watch?v=7bIUIFMZY6c",
+      ],
     },
     {
       id: 1,
@@ -67,18 +94,40 @@ Navigate to home page, select the old testament or new testament, select the boo
       isMarkDown: true,
       markDown: `
 # كيفية قراءة الكتاب المقدس؟
-قراءة الكتاب المقدس ليست مجرد مهمة، <mark>إنها رحلة حياة لا تنتهي حقًا.</mark> في كل مرة نفتح صفحاته، نتغمر أعماقًا في الرسائل العميقة من الله، نتصل بالفصول والأحداث التي تشكل نسيج فهمنا الروحي.  
-أثناء قيامك بهذه الرحلة المستمرة، اجعل هذه الخطوات دليلك، لتساعدك في استكشاف المعرفة الكتابية الغنية، وتقربك من الحكمة الخالدة التي تحملها.
-### خطوات لقراءة فعّالة للكتاب المقدس
-1. **الصلاة:** ابدأ قراءتك للكتاب المقدس بلحظة من الصلاة. إبحث عن الفهم و بقلب مفتوح أثناء سفرك في هذه الرحلة الروحية.
-2. **وضع الهدف - فهم قلب الله:** اجعل فهم الله هو هدفك النهائي. اغمر في النص لفهم أفكاره، رؤيته، ورغباته. استكشف كيفية العيش بتناغم معه، تمجيده، والعثور على الرضا الحقيقي في وجوده.
-3. **السياق مهم:** قبل ان تبدأ في قرأة اي من الأسفار، اقرأ مقدمة وملخص السفر في موقعنا لتعرف اكثر عن الاحداث التاريخيه المتزامنه مع احداث السفر و شخصية الكاتب و نبذه عن المتلقي للرساله سواء كان شخص او مجموعه من الاشخاص او شعب كامل. يعزز فهم السياق التاريخي والثقافي الفهم.
-   انتقل إلى الصفحة الرئيسية، اختر العهد القديم أو العهد الجديد، اختر السفر الذي تعتزم قراءته، واقرأ ملخصنا حول الكاتب والجمهور والسياق التاريخي.
-4. **تخيل نفسك في مكانهم:** تخيل نفسك في مكان الشخصيات. فكر في كيف ستشعر وتتصرف في مواقفهم. يمكن أن تعزز هذه العاطفة اتصالك بالسرد.
-5. **احتفظ بالملاحظات:** قم بتدوين الأفكار أو الأسئلة أو التأملات الشخصية. لا يعزز ذلك فهمك فحسب، بل يخلق أيضًا سجلا لرحلتك الروحية.
-6. **استكشاف المصادر الإضافية:** تفقد مقاطع الفيديو أو البودكاست أو المقالات ذات الصلة المتاحه في موقعنا او من اي موقع اخر. يمكن أن تقدم هذه المصادر وجهات نظر إضافية وتعزيز فهمك العام.
-7. **تأمل بروح الصلاة:** انهي جلسات القراءة الخاصة بك بلحظة من التأمل أو الصلاة. يمكن أن يعزز ذلك اتصالك بالجوانب الروحية للنص.
-    
+قراءة الكتاب المقدس ليست مجرد مهمة، <mark>إنها رحلة حياة لا تنتهي حقًا.</mark> 
+أثناء قيامك بهذه الرحلة، اجعل هذه الخطوات دليلك، لتساعدك في استكشاف المعرفة .
+
+## ارشادات للقراءة في الكتاب المقدس
+
+* **ابدأ بالصلاة واطلب من الله الحكمة والفهم.**
+* **اقرأ عن الخلفية التاريخية للسفر الذي تقرأ فيه، مثل الكاتب والهدف من الكتابة والجمهور المستهدف.**
+* **اقرأ بانتظام.**
+* **اقرأ بالترتيب من البداية إلى النهاية.**
+* **اقرأ بفهم و اهتم بالكيف و ليس الكم.**
+* **اقرأ بهدف التعرف على الله و إرادته في حياتك**.
+* **تعلم من حياة المسيح والأباء القديسين، واستخرج تطبيقات عملية تطبقها في حياتك.**
+* **أعط عناوين للنصوص، واكتبها في كتابك المقدس.**
+* **اكتب اسمك علي كتابك المقدس و اجعله صديقك، و مصدر تعليمك و ارشادك و سلامك، و مرجعك للحقائق.**
+* **اربط النص الذي تقرأ فيه بباقي الكتاب المقدس**.
+* **اقرأ الكتاب المقدس أكثر من مرة، فكل مرة تقرأ فيها تكتشف المزيد من معانيه.**
+* **اختر الوقت والمكان المناسبين للقراءة**.
+
+
+### شرح بعض النقاط
+
+* **اقرأ عن الخلفية التاريخية للسفر**: يساعدك ذلك على فهم السياق الذي كُتب فيه النص، وتفسيره بشكل أفضل.
+* **اقرأ بانتظام**: يساعدك ذلك على الاستمرار في التعلم والنمو روحيًا.
+* **اقرأ بالترتيب**: يساعدك ذلك على فهم القصة الشاملة للكتاب المقدس.
+* **اقرأ بفهم**: ابحث عن تفسيرات للنص إذا كانت هناك أية صعوبات في فهمه.
+* **اقرأ بهدف التعرف على الله و إرادته في حياتك**: يساعدك ذلك على تطبيق ما تتعلمه من الكتاب المقدس في حياتك اليومية.
+* **تعلم من حياة المسيح والأباء القديسين**: يساعدك ذلك على أن تكون مسيحًا أفضل.
+* **أعط عناوين للنصوص**: يساعدك ذلك على تذكر ما تقرأ.
+* **اجعل كتابك المقدس صديقًا لك**: اجعله مصدرًا للإلهام والتوجيه.
+* **اربط النص الذي تقرأ فيه بباقي الكتاب المقدس**: يساعدك ذلك على فهم الصورة الكبيرة للكتاب المقدس.
+* **اقرأ الكتاب المقدس أكثر من مرة**: كلما قرأت الكتاب المقدس أكثر، كلما فهمته بشكل أفضل.
+* **اختر الوقت والمكان المناسبين للقراءة**: سيساعدك ذلك على التركيز على ما تقرأ.
+
+**أتمنى أن تكون هذه الإعادة  مفيدة.**    
 ##### تذكر، قراءة الكتاب المقدس هي رحلة شخصية، ولا يوجد نهج يناسب الجميع. ضبط هذه الخطوات لتتناسب مع تفضيلاتك ودع العملية تتكشف بشكل طبيعي
     `,
       interpretation: "",
@@ -87,7 +136,10 @@ Navigate to home page, select the old testament or new testament, select the boo
         "لاَ يَبْرَحْ سِفْرُ هذِهِ الشَّرِيعَةِ مِنْ فَمِكَ، بَلْ تَلْهَجُ فِيهِ نَهَارًا وَلَيْلًا، لِكَيْ تَتَحَفَّظَ لِلْعَمَلِ حَسَبَ كُلِّ مَا هُوَ مَكْتُوبٌ فِيهِ. لأَنَّكَ حِينَئِذٍ تُصْلِحُ طَرِيقَكَ وَحِينَئِذٍ تُفْلِحُ. (يشوع 1: 8).",
         "كُلُّ الْكِتَابِ هُوَ مُوحًى بِهِ مِنَ اللهِ، وَنَافِعٌ لِلتَّعْلِيمِ وَالتَّوْبِيخِ، لِلتَّقْوِيمِ وَالتَّأْدِيبِ الَّذِي فِي الْبِرِّ. (2 تي 3: 16).",
       ],
-      references: [],
+      references: [
+        "https://www.youtube.com/watch?v=C3qL54EnW20",
+        "https://www.youtube.com/watch?v=7bIUIFMZY6c",
+      ],
     },
   ],
 };

@@ -50,8 +50,15 @@
             'fixed-title': !fullscreen,
           }"
         >
-          <div class="my-n4">
-            <v-breadcrumbs :items="breadcrumbs" color="red" />
+          <div>
+            <v-btn
+              text
+              color="#b78727"
+              @click="$router.push({ name: 'homePage' })"
+              >Home</v-btn
+            >
+            /
+            <v-btn text color="grey" disabled>{{ category }}</v-btn>
           </div>
           <v-row dense class="pb-2" align="center">
             <v-col sm="10" cols="12">
@@ -75,17 +82,17 @@
 
             <v-col v-if="$vuetify.breakpoint.smAndUp" cols="12" sm="2">
               <v-btn
-                color="gold"
                 icon
                 x-small
-                class="pr-2"
+                class="mr-2"
+                color="#b78727"
                 @click="fullscreen = !fullscreen"
               >
                 <v-icon>
                   {{ fullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen" }}
                 </v-icon>
               </v-btn>
-              <v-btn color="gold" x-small icon class="pr-2">
+              <v-btn color="#b78727" x-small icon class="pr-2">
                 <v-icon>mdi-share-variant</v-icon>
               </v-btn>
             </v-col>
@@ -93,12 +100,12 @@
           <v-divider></v-divider>
         </div>
         <v-card-text class="card-text">
-          <v-img
+          <!-- <v-img
             src="@/assets/images/dreams.jpg"
             height="auto"
             width="auto"
             class="mb-4 main-img"
-          ></v-img>
+          ></v-img> -->
           <section v-if="Object.keys(selectedItem.properties).length > 0">
             <div
               v-for="(key, z) in Object.keys(selectedItem.properties)"
@@ -139,19 +146,58 @@
             <h3 class="maroon mb-4">
               {{ $store.state.locale == "ar" ? "مصادر" : "References" }}
             </h3>
-            <ul>
-              <li v-for="(reference, w) in selectedItem.references" :key="w">
-                {{ reference }}
-              </li>
-            </ul>
+
+            <v-responsive
+              v-for="(reference, w) in selectedItem.references"
+              :key="w"
+              aspect-ratio="16/9"
+            >
+              <iframe
+                width="300"
+                height="200"
+                :src="`https://www.youtube.com/embed/${reference}`"
+                frameborder="0"
+                allowfullscreen
+                class="main-img"
+              ></iframe>
+            </v-responsive>
           </section>
         </v-card-text>
       </v-card>
     </v-col>
     <!-- Image column -->
     <v-col v-if="!fullscreen" cols="12" class="fixed-img">
-      <v-img src="@/assets/images/dreams.jpg" height="50%" width="auto"></v-img
-    ></v-col>
+      <!-- <div>
+        <v-img
+          src="@/assets/images/dreams.jpg"
+          height="50%"
+          width="auto"
+        ></v-img>
+      </div> -->
+      <div class="mt-4">
+        <h4 class="maroon">
+          {{ $store.state.locale == "ar" ? "مصادر" : "Resources" }}
+        </h4>
+        <v-responsive aspect-ratio="16/9" class="mb-4">
+          <iframe
+            width="200"
+            height="150"
+            src="https://www.youtube.com/embed/C3qL54EnW20"
+            frameborder="2"
+            allowfullscreen
+          ></iframe>
+        </v-responsive>
+        <v-responsive aspect-ratio="16/9">
+          <iframe
+            width="200"
+            height="150"
+            src="https://www.youtube.com/embed/7bIUIFMZY6c"
+            frameborder="2"
+            allowfullscreen
+          ></iframe>
+        </v-responsive>
+      </div>
+    </v-col>
   </v-row>
 </template>
 <script>
@@ -198,7 +244,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .scroll {
   overflow-y: scroll;
   height: 600px;
@@ -269,17 +315,21 @@ h3 {
 .bold {
   font-weight: bold;
 }
-.markdown h1 {
-  color: #800000;
-  margin-bottom: 10px;
+::v-deep .markdown h1 {
+  color: #800000 !important;
+  margin-bottom: 10px !important;
 }
-.markdown h2 {
-  color: #800000;
-  margin-bottom: 10px;
+::v-deep .markdown h2 {
+  color: #800000 !important;
+  margin-bottom: 10px !important;
 }
-.markdown h3 {
-  color: #800000;
-  margin-bottom: 10px;
+::v-deep .markdown h3 {
+  color: #800000 !important;
+  margin-bottom: 10px !important;
+}
+::v-deep .markdown h4 {
+  color: #800000 !important;
+  margin-bottom: 10px !important;
 }
 header {
   color: #800000;

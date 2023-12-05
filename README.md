@@ -2,11 +2,16 @@
 
 ### Table of Contents
 
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Dependencies](#dependencies)
-- [Development](#development)
-- [Production](#production)
+- [Vue.js README](#vuejs-readme)
+    - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Development](#development)
+    - [Production](#production)
+  - [Project Structure](#project-structure)
+    - [Usage](#usage)
+    - [Configuration](#configuration)
 
 ## Getting Started
 
@@ -101,3 +106,9 @@ VUE_APP_LOGGER_API=null
 VUE_APP_LOG_LEVEL=debug
 VUE_APP_ENV=development
 NODE_ENV=development
+
+
+bible-lense/
+npm run build
+git add dist && git commit -m "add build"  
+git subtree push --prefix dist origin gh-pages

@@ -21,7 +21,7 @@
         </v-list>
       </div>
 
-      <div style="position: absolute; left: 25%; width: 70%">
+      <div class="dict-table">
         <v-data-table
           :headers="headers"
           :items="filteredDictionary"
@@ -29,37 +29,41 @@
           :items-per-page="-1"
           :fixed-header="true"
           height="400"
-          class="elevation-1 pa-4 pr-4 mt-12"
+          class="elevation-1 pa-4 pt-1"
         >
           <template v-slot:top>
-            <h3>
-              <label color="primary">The Bible Dictionary</label>
-            </h3>
-            <v-toolbar flat>
+            <label color="primary"><h3>The Bible Dictionary</h3></label>
+
+            <v-switch v-model="showExamples" label="Show Examples"></v-switch>
+
+            <div flat>
               <v-row dense>
-                <v-col cols="12" sm="6">
+                <v-col cols="6" sm="6">
                   <v-text-field
                     v-model="search"
                     append-icon="mdi-magnify"
                     label="Search"
                     hide-details
+                    single-line
                     dense
                     clearable
+                    outlined
                   ></v-text-field>
                 </v-col>
-                <v-col cols="12" sm="6">
-                  <v-autocomplete
+                <v-col cols="6" sm="6">
+                  <v-select
                     v-model="selectedCategory"
                     :items="categories"
                     label="Filter by category"
-                    hide-details
                     dense
+                    single-line
                     clearable
+                    outlined
                     @input="onSelectCategory"
-                  ></v-autocomplete>
+                  ></v-select>
                 </v-col>
               </v-row>
-            </v-toolbar>
+            </div>
           </template>
           <template v-slot:[`item.english`]="{ item }">
             {{ item.english }}
@@ -95,7 +99,17 @@ export default {
     return {
       speech: null,
       search: "",
-      headers: [
+      showExamples: false,
+
+      dictionary: [],
+      filteredDictionary: [],
+      categories: [],
+      selectedCategory: "All",
+    };
+  },
+  computed: {
+    headers() {
+      let mandHeader = [
         { text: "English", value: "english", width: "25%", align: "start" },
         {
           text: "Translation",
@@ -103,13 +117,12 @@ export default {
           width: "25%",
           align: "end",
         },
-        { text: "Example", value: "example", width: "50%" },
-      ],
-      dictionary: [],
-      filteredDictionary: [],
-      categories: [],
-      selectedCategory: "All",
-    };
+      ];
+      if (this.showExamples) {
+        mandHeader.push({ text: "Example", value: "example", width: "50%" });
+      }
+      return mandHeader;
+    },
   },
   methods: {
     async pronounce(englishWord) {
@@ -167,5 +180,22 @@ export default {
   left: 0;
   top: 12%;
   width: 25%;
+}
+.dict-table {
+  position: absolute;
+  left: 25%;
+  width: 70%;
+}
+@media (max-width: 576px) {
+  .dict-list {
+    display: none;
+  }
+  .dict-table {
+    left: 0;
+    width: 100%;
+  }
+  .sm-hide {
+    display: none;
+  }
 }
 </style>

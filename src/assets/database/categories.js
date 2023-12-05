@@ -4,7 +4,7 @@ exports.DATA = {
       id: 1,
       name: "howToStudyTheBible",
       title: "How to Study The Bible",
-      subtitle: "Let these steps be your guide.",
+      subtitle: "Let these steps be your guide to study the bible.",
       description:
         "Reading the Bible is not just a task; it's a life journey that never truly ends. Each time we open its pages, we dive deeper into the profound messages of God, connecting chapters and events that shape the very fabric of our spiritual understanding. As you take this perpetual journey, let these steps be your guide, helping you navigate the rich tapestry of biblical knowledge and drawing you closer to the timeless wisdom it holds.",
       imgSrc: "bibleStudy2.jpeg",
@@ -182,7 +182,7 @@ exports.DATA = {
       title: "كيفية دراسة الكتاب المقدس",
       subtitle: "دع هذه الخطوات تكون دليلك.",
       description:
-        "قراءة الكتاب المقدس ليست مجرد مهمة؛ إنها رحلة حياة لا تنتهي حقًا. في كل مرة نفتح صفحاته، نتغمر أعماقًا في الرسائل العميقة من الله، نتصل بالفصول والأحداث التي تشكل نسيج فهمنا الروحي. أثناء قيامك بهذه الرحلة المستمرة، دع هذه الخطوات تكون دليلك، ساعدة في توجيهك خلال السجادة الغنية بالمعرفة الكتابية وتقربك من الحكمة الخالدة التي تحملها.",
+        "قراءة الكتاب المقدس ليست مجرد مهمة، إنها رحلة حياة لا تنتهي حقًا. في كل مرة نفتح صفحاته، نتغمر أعماقًا في الرسائل العميقة من الله، نتصل بالفصول والأحداث التي تشكل نسيج فهمنا الروحي. أثناء قيامك بهذه الرحلة المستمرة، دع هذه الخطوات تكون دليلك، ساعدة في توجيهك خلال السجادة الغنية بالمعرفة الكتابية وتقربك من الحكمة الخالدة التي تحملها.",
       imgSrc: "bibleStudy2.jpeg",
       childrenPath: {
         name: "canvasPage",

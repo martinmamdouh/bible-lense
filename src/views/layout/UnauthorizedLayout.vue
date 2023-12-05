@@ -119,6 +119,7 @@ export default {
   },
   methods: {
     goTo(name) {
+      this.drawer = false;
       if (this.$route.name == name) return;
       try {
         this.$router.push({ name });
@@ -127,6 +128,7 @@ export default {
       }
     },
     goToPath(path) {
+      this.drawer = false;
       try {
         this.$router.push(path);
       } catch (err) {
@@ -135,12 +137,12 @@ export default {
     },
     onSelectLanguage(language) {
       this.locale = language;
-      window.localStorage.setItem("bible_lense_locale", this.locale);
+      window.localStorage.setItem("bible_lens_locale", this.locale);
       window.location.reload();
     },
   },
   created() {
-    const lang = window.localStorage.getItem("bible_lense_locale") || "en";
+    const lang = window.localStorage.getItem("bible_lens_locale") || "en";
     this.locale = lang;
     this.$setLocale(lang);
     this.categories = DATA[this.$store.state.locale];

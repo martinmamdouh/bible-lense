@@ -1,14 +1,26 @@
 <template>
   <v-container>
-    <v-row class="intro-text" dense>
-      <v-col cols="10">
-        <h3>
+    <v-row class="intro-text" align="center" dense>
+      <v-col cols="12" sm="8" offset="4">
+        <h5>
           &ldquo;{{
             $store.state.locale == "ar"
               ? `سِرَاجٌ لِرِجْلِي كَلاَمُكَ وَنُورٌ لِسَبِيلِي." (مز 119: 105).`
               : `Your word is a lamp for my feet, a light on my path. (Psalm 119:105)`
           }}&rdquo;
-        </h3>
+        </h5>
+      </v-col>
+      <!-- 
+
+      <v-col cols="4" sm="2">
+        <v-img
+          height="80"
+          width="180"
+          class="elevation-8 rounded"
+          :src="require('@/assets/images/bible_live.jpeg')"
+        ></v-img>
+      </v-col>
+      <v-col cols="12">
         <p :class="{ 'full-text': readmore, 'summary-text': !readmore }">
           {{
             $store.state.locale == "ar"
@@ -42,18 +54,9 @@
           }}
         </p>
       </v-col>
-      <v-col
-        cols="2"
-        :class="{ 'full-text': readmore, 'summary-text': !readmore }"
-      >
-        <v-img
-          height="180"
-          width="180"
-          class="elevation-8 rounded"
-          :src="require('@/assets/images/bible_live.jpeg')"
-        ></v-img>
-      </v-col>
+       -->
     </v-row>
+    <!-- 
     <v-row align="center" justify="center">
       <v-btn small color="#b78727" text @click="readmore = !readmore"
         >{{ readmore ? "Read Less" : "Read More" }}
@@ -62,6 +65,7 @@
         }}</v-icon></v-btn
       >
     </v-row>
+     -->
     <v-row>
       <v-col
         v-for="(category, i) in categories"
@@ -84,14 +88,14 @@ import { DATA } from "@/assets/database/categories";
 export default {
   components: { CategoryCard },
   data() {
-    return { categories: [], readmore: true };
+    return { categories: [], readmore: false };
   },
   created() {
     this.categories = DATA[this.$store.state.locale];
   },
 };
 </script>
-<style>
+<style scoped>
 .full-text {
   display: inherit;
 }
