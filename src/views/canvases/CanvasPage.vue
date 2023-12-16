@@ -15,8 +15,6 @@ export default {
     return { items: null };
   },
   created() {
-    // this.items = loadJsonData(this.dataSet)["en"];
-
     this.items = loadJsData(this.dataSet)[this.$store.state.locale];
   },
 };

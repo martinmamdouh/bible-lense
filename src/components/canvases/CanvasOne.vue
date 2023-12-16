@@ -19,14 +19,21 @@
                 class="list-itemss"
               >
                 <v-list-item-content>
-                  <v-list-item-title
-                    @click="
-                      selectedItem = item;
-                      onSelectItem();
-                    "
-                  >
-                    <small>{{ item.title }}</small>
-                  </v-list-item-title>
+                  <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-list-item-title
+                        v-bind="attrs"
+                        v-on="on"
+                        @click="
+                          selectedItem = item;
+                          onSelectItem();
+                        "
+                      >
+                        <small>{{ item.title }}</small>
+                      </v-list-item-title>
+                    </template>
+                    <span>{{ item.title }}</span>
+                  </v-tooltip>
                 </v-list-item-content>
               </v-list-item>
             </v-list-item-group>
@@ -54,11 +61,12 @@
             <v-btn
               text
               color="#b78727"
+              small
               @click="$router.push({ name: 'homePage' })"
               >Home</v-btn
             >
             /
-            <v-btn text color="grey" disabled>{{ category }}</v-btn>
+            <v-btn small text color="grey" disabled>{{ category }}</v-btn>
           </div>
           <v-row dense class="pb-2" align="center">
             <v-col sm="10" cols="12">
@@ -81,20 +89,43 @@
             </v-col>
 
             <v-col v-if="$vuetify.breakpoint.smAndUp" cols="12" sm="2">
-              <v-btn
-                icon
-                x-small
-                class="mr-2"
-                color="#b78727"
-                @click="fullscreen = !fullscreen"
-              >
-                <v-icon>
-                  {{ fullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen" }}
-                </v-icon>
-              </v-btn>
-              <v-btn color="#b78727" x-small icon class="pr-2">
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    v-bind="attrs"
+                    v-on="on"
+                    icon
+                    x-small
+                    class="mr-2"
+                    color="#b78727"
+                    @click="fullscreen = !fullscreen"
+                  >
+                    <v-icon>
+                      {{
+                        fullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen"
+                      }}
+                    </v-icon>
+                  </v-btn>
+                </template>
+                <span>{{
+                  fullscreen ? "Exit fullscreen" : "Read in fullscreen mode"
+                }}</span>
+              </v-tooltip>
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    v-bind="attrs"
+                    v-on="on"
+                    color="#b78727"
+                    x-small
+                    icon
+                    class="pr-2"
+                  >
+                    <v-icon>mdi-share-variant</v-icon>
+                  </v-btn>
+                </template>
+                <span>Share</span>
+              </v-tooltip>
             </v-col>
           </v-row>
           <v-divider></v-divider>
@@ -166,7 +197,7 @@
       </v-card>
     </v-col>
     <!-- Image column -->
-    <v-col v-if="!fullscreen" cols="12" class="fixed-img">
+    <v-col v-if="!fullscreen" cols="12" class="resources">
       <!-- <div>
         <v-img
           src="@/assets/images/dreams.jpg"
@@ -175,27 +206,179 @@
         ></v-img>
       </div> -->
       <div class="mt-4">
-        <h4 class="maroon">
+        <h4 class="navy">
           {{ $store.state.locale == "ar" ? "مصادر" : "Resources" }}
+          <span class="mx-4"
+            ><v-btn x-small icon @click="hideMedia = !hideMedia"
+              ><v-icon>{{
+                hideMedia ? "mdi-eye" : "mdi-eye-off"
+              }}</v-icon></v-btn
+            ></span
+          >
         </h4>
-        <v-responsive aspect-ratio="16/9" class="mb-4">
-          <iframe
-            width="200"
-            height="150"
-            src="https://www.youtube.com/embed/C3qL54EnW20"
-            frameborder="2"
-            allowfullscreen
-          ></iframe>
-        </v-responsive>
-        <v-responsive aspect-ratio="16/9">
-          <iframe
-            width="200"
-            height="150"
-            src="https://www.youtube.com/embed/7bIUIFMZY6c"
-            frameborder="2"
-            allowfullscreen
-          ></iframe>
-        </v-responsive>
+        <div v-if="!hideMedia">
+          <h5>Father Dawood Lamie</h5>
+          <v-responsive aspect-ratio="16/9" class="mb-4">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/C3qL54EnW20"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+              @click="console.log('he')"
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+          <h5>How to read the bible</h5>
+          <v-responsive aspect-ratio="16/9">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7bIUIFMZY6c"
+              frameborder="2"
+              allowfullscreen
+            ></iframe>
+          </v-responsive>
+        </div>
       </div>
     </v-col>
   </v-row>
@@ -213,6 +396,7 @@ export default {
       activeListItem: {},
       fullscreen: false,
       ulr: null,
+      hideMedia: false,
       currentCategory: null,
       breadcrumbs: [
         {
@@ -297,11 +481,14 @@ h3 {
   width: 25%;
   left: 0%;
 }
-.fixed-img {
+.resources {
   position: fixed;
-  top: 13%;
+  top: 10%;
   width: 24%;
   right: 0%;
+  padding: 4px;
+  height: 100%;
+  overflow-y: scroll;
 }
 .card-text {
   margin-top: 80px;
@@ -310,7 +497,7 @@ h3 {
   display: none;
 }
 .sm-font {
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 .bold {
   font-weight: bold;
@@ -370,7 +557,7 @@ header {
     margin-top: 0px;
   }
   .sm-font {
-    font-size: 9px !important;
+    font-size: 12px !important;
   }
 }
 </style>

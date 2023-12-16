@@ -6,7 +6,7 @@ exports.DATA = {
       title: "How to Study The Bible",
       subtitle: "Let these steps be your guide to study the bible.",
       description:
-        "Reading the Bible is not just a task; it's a life journey that never truly ends. Each time we open its pages, we dive deeper into the profound messages of God, connecting chapters and events that shape the very fabric of our spiritual understanding. As you take this perpetual journey, let these steps be your guide, helping you navigate the rich tapestry of biblical knowledge and drawing you closer to the timeless wisdom it holds.",
+        "This section outlines steps to help you in reading the Bible.",
       imgSrc: "bibleStudy2.jpeg",
       childrenPath: {
         name: "canvasPage",
@@ -21,7 +21,7 @@ exports.DATA = {
     {
       id: 2,
       name: "oldTestamentScriptures",
-      title: "Old Testament Scriptures",
+      title: "Old Testament",
       subtitle: "",
       description: "",
       imgSrc: "oldTestament.png",
@@ -55,7 +55,7 @@ exports.DATA = {
     {
       id: 4,
       name: "newTestamentScriptures",
-      title: "New Testment Scriptures",
+      title: "New Testament",
       subtitle: "",
       description: "",
       imgSrc: "newTestament2.jpeg",
@@ -180,9 +180,8 @@ exports.DATA = {
       id: 1,
       name: "كيفية_دراسة_الكتاب_المقدس",
       title: "كيفية دراسة الكتاب المقدس",
-      subtitle: "دع هذه الخطوات تكون دليلك.",
-      description:
-        "قراءة الكتاب المقدس ليست مجرد مهمة، إنها رحلة حياة لا تنتهي حقًا. في كل مرة نفتح صفحاته، نتغمر أعماقًا في الرسائل العميقة من الله، نتصل بالفصول والأحداث التي تشكل نسيج فهمنا الروحي. أثناء قيامك بهذه الرحلة المستمرة، دع هذه الخطوات تكون دليلك، ساعدة في توجيهك خلال السجادة الغنية بالمعرفة الكتابية وتقربك من الحكمة الخالدة التي تحملها.",
+      subtitle: " دليلك لقراءة الكتاب المقدس.",
+      description: "يوضح هذا القسم الخطوات التي تساعدك في قراءة الكتاب المقدس.",
       imgSrc: "bibleStudy2.jpeg",
       childrenPath: {
         name: "canvasPage",

@@ -4,7 +4,7 @@
       <div class="dict-list">
         <h5 class="pl-2 navy">Categories</h5>
         <v-list>
-          <v-list-item-group :value="selectedCategory" mandatory class="gold">
+          <v-list-item-group mandatory class="gold">
             <v-list-item v-for="(category, i) in categories" :key="i">
               <v-list-item-content>
                 <v-list-item-title
@@ -99,12 +99,12 @@ export default {
     return {
       speech: null,
       search: "",
-      showExamples: false,
+      showExamples: true,
 
       dictionary: [],
       filteredDictionary: [],
       categories: [],
-      selectedCategory: "All",
+      selectedCategory: "Generic",
     };
   },
   computed: {
@@ -137,7 +137,7 @@ export default {
       this.initializeCategories();
     },
     initializeCategories() {
-      let allCategories = ["All"];
+      let allCategories = [];
       this.dictionary.forEach((item) => {
         allCategories = allCategories.concat(this.categories, item.categories);
       });
@@ -151,11 +151,6 @@ export default {
       this.categories = distinctCategories.sort();
     },
     onSelectCategory() {
-      if (!this.selectedCategory || this.selectedCategory == "All") {
-        this.selectedCategory = "All";
-        this.filteredDictionary = this.dictionary;
-        return;
-      }
       this.filteredDictionary = this.dictionary.filter((item) => {
         return item.categories.includes(this.selectedCategory);
       });
@@ -163,6 +158,7 @@ export default {
   },
   created() {
     this.loadDictionaryData("ar");
+    this.onSelectCategory();
     try {
       const speaker = new Speak();
       speaker.init().then(() => {

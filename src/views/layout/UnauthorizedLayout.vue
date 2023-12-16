@@ -19,23 +19,16 @@
       <v-btn
         text
         x-small
-        :color="languages[0].value == locale ? '#000080' : '#333'"
+        :color="languages[0].value == locale ? '#800000' : '#333'"
         @click="onSelectLanguage(languages[0].value)"
         >{{ languages[0].label }} </v-btn
       ><v-icon small>mdi mdi-web</v-icon>
       <v-btn
         x-small
         text
-        :color="languages[1].value == locale ? '#000080' : '#333'"
+        :color="languages[1].value == locale ? '#800000' : '#333'"
         @click="onSelectLanguage(languages[1].value)"
         >{{ languages[1].label }}
-      </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-app-bar>
 

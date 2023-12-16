@@ -6,7 +6,6 @@
       height="200px"
       :src="require(`@/assets/images/${category.imgSrc}`)"
     >
-      <v-card-title class="card-title">{{ category.title }}</v-card-title>
     </v-img>
     <v-img
       v-else
@@ -14,8 +13,9 @@
       height="200px"
       src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
     >
-      <v-card-title class="card-title"> {{ category.title }}</v-card-title>
     </v-img>
+    <div class="ctegory-title">{{ category.title }}</div>
+
     <v-card-subtitle class="card-subtitle pb-0">
       {{ category.subtitle }}
     </v-card-subtitle>
@@ -56,9 +56,16 @@ export default {
     margin-right: 10px;
   }
 }
-.card-title {
-  background-color: rgba(23, 11, 14, 0.579) !important;
+.ctegory-title {
+  background-color: rgba(23, 11, 14, 0.75) !important;
+  font-size: 20px;
   white-space: nowrap;
+  margin-top: -30px;
+  position: absolute;
+  width: 100%;
+  color: white;
+  padding-right: 4px;
+  padding-left: 4px;
 }
 .card-text {
   height: 100px;

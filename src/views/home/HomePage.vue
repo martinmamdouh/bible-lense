@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="intro-text" align="center" dense>
-      <v-col cols="12" sm="8" offset="4">
+      <v-col cols="12" sm="8" offset-sm="4">
         <h5>
           &ldquo;{{
             $store.state.locale == "ar"
