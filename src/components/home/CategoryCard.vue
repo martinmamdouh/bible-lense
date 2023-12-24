@@ -74,6 +74,7 @@ export default {
 .card-subtitle {
   height: 40px;
   overflow: hidden;
+  font-size: 12px;
 }
 .card-actions {
   position: absolute;

@@ -30,6 +30,24 @@ const routes = [
         props: true,
       },
       {
+        path: "bible-story",
+        name: "bibleStoryRouter",
+        component: () => import("@/views/bible-story/BibleStoryRouter.vue"),
+        children: [
+          {
+            path: "bible-story-characters",
+            name: "bibleStoryCharacters",
+            component: () =>
+              import("@/views/bible-story/BibleStoryCharacters.vue"),
+          },
+          {
+            path: "bible-story-events",
+            name: "bibleStoryEvents",
+            component: () => import("@/views/bible-story/BibleStoryEvents.vue"),
+          },
+        ],
+      },
+      {
         path: "404",
         name: "notFound",
         component: () => import("@/views/errors/NotFound.vue"),

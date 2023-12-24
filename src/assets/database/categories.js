@@ -4,7 +4,7 @@ exports.DATA = {
       id: 1,
       name: "howToStudyTheBible",
       title: "How to Study The Bible",
-      subtitle: "Let these steps be your guide to study the bible.",
+      subtitle: "Let these steps be your guide.",
       description:
         "This section outlines steps to help you in reading the Bible.",
       imgSrc: "bibleStudy2.jpeg",

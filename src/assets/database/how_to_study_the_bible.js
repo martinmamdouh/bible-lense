@@ -2,9 +2,7 @@ exports.DATA = {
   en: [
     {
       id: 1,
-      name: "How to Start",
       title: "A Guide for Effective Bible Reading",
-      subtitle: "",
       properties: {},
       isMarkDown: true,
       markDown: `
@@ -61,27 +59,54 @@ Here are some additional tips for reading the Bible:
         "https://www.youtube.com/watch?v=7bIUIFMZY6c",
       ],
     },
+
     {
-      id: 1,
-      name: "The Parable of the Sower",
-      title: "The Kingdom of Heaven is Like a Sower Who Sows Seed",
-      subtitle: "",
-      properties: { writer: "Matthew", audiance: "Jewesh" },
+      id: 2,
+      title: "How do we help you in this journey?",
+      properties: {},
+      isMarkDown: true,
+      markDown: `
+# Bible Reading Companion
+
+## Introduction
+Discover the depths of the scriptures with our user-friendly website designed to enhance your Bible reading experience. We believe that understanding the historical context and major events within the scripture can significantly enrich your spiritual journey.
+
+## Features
+
+1. **Historical Background:**
+   Before delving into the scriptures, we provide you with a concise historical background. Understanding the context in which these sacred texts were written can illuminate the meaning and significance of the passages.
+
+2. **Major Events Summary:**
+   Explore a brief yet comprehensive summary of the major events within each scripture. This summary serves as a roadmap, helping you navigate the key themes and narratives embedded in the text.
+
+3. **Videos by Father Dawood Lamie and Bible Project:**
+   Dive deeper into the scriptures with enlightening videos. Father Dawood Lamie's insights and the captivating visuals from the Bible Project channel offer unique perspectives, making your exploration both educational and engaging. We encourage you to start your journey by watching these two thought-provoking videos.
+
+4. **Free of Charge:**
+   Our commitment to fostering spiritual growth is reflected in the accessibility of our website—it's completely free of charge. We believe that everyone should have the opportunity to explore the Bible without any financial barriers.
+
+5. **Complementary Tool, Not an Alternative:**
+   It's important to note that our website is a complementary tool, not a substitute for reading the Bible. We aim to enhance your understanding of the scriptures, encouraging you to embark on a parallel journey of personal exploration.
+
+6. **Resource Transparency:**
+   We value transparency, and the information provided on our website is sourced from reputable and reliable references. To further support your study, we offer a list of resources from which we gathered our information.
+
+## Conclusion
+Embark on a transformative journey through the scriptures with our website as your companion. We believe that by providing historical insights, summarizing major events, and offering captivating videos, we can contribute to your spiritual growth. Our dedication to making this resource freely available underscores our mission to help more people read the Bible and deepen their connection with the divine. Enjoy your exploration, and may it be a source of inspiration on your spiritual path.
+      
+
+`,
       interpretation:
         "The Kingdom of Heaven is Like a Sower Who Sows Seed The Kingdom of Heaven is Like a Sower Who Sows Seed The Kingdom of Heaven is Like a Sower Who Sows Seed The Kingdom of Heaven is Like a Sower Who Sows Seed The Kingdom of Heaven is Like a Sower Who Sows Seed",
-      bibleVerses: ["Matthew 13:1-9"],
-      references: ["Matthew 13:1-9"],
-    },
-    {
-      id: 1,
-      name: "The Parable of the Sower",
-      title: "The Kingdom of Heaven is Like a Sower Who Sows Seed",
-      subtitle: "",
-      properties: { writer: "Matthew", audiance: "Jewesh" },
-      interpretation:
-        "The Kingdom of Heaven is Like a Sower Who Sows Seed The Kingdom of Heaven is Like a Sower Who Sows Seed The Kingdom of Heaven is Like a Sower Who Sows Seed The Kingdom of Heaven is Like a Sower Who Sows Seed The Kingdom of Heaven is Like a Sower Who Sows Seed",
-      bibleVerses: ["Matthew 13:1-9"],
-      references: ["Matthew 13:1-9"],
+      bibleVerses: [
+        "You study the Scriptures diligently because you think that in them you have eternal life. These are the very Scriptures that testify about me. (John 5:39)",
+        "Keep this Book of the Law always on your lips; meditate on it day and night, so that you may be careful to do everything written in it. Then you will be prosperous and successful. (Joshua 1:8)",
+        "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness, so that the servant of God may be thoroughly equipped for every good work. (2 Timothy 3:16-17)",
+      ],
+      references: [
+        "https://www.youtube.com/watch?v=C3qL54EnW20",
+        "https://www.youtube.com/watch?v=7bIUIFMZY6c",
+      ],
     },
   ],
   ar: [
